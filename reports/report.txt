@@ -1,0 +1,20 @@
+============================================================
+SYSTEM TELEMETRY & PERFORMANCE REPORT
+Generated: 2026-08-31T18:52:42
+============================================================
+Samples analyzed : 23
+Avg CPU / Max CPU: 34.9% / 100.0%
+Avg Mem / Max Mem: 6.3% / 6.3%
+
+Anomalies detected: 2
+  - [sustained_cpu] CPU >= 80.0% for 8 consecutive samples (2026-08-31T18:52:16.140809+00:00 to 2026-08-31T18:52:30.247945+00:00)
+  - [spike_disk] Disk I/O spike: 0.09 MB vs trailing 10-sample average
+
+Top CPU-consuming processes (by # samples as top process):
+  - python3: 14 samples
+  - process_api: 9 samples
+
+Suggested optimizations:
+  * Sustained high CPU detected — investigate the top-offending process for busy-polling loops or missing backoff/sleep in hot paths.
+  * 1 disk I/O spike(s) detected — consider batching writes or checking for unexpected background sync/indexing activity.
+============================================================
